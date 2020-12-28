@@ -29,7 +29,7 @@ def load_data():
          432.], dtype=np.float32)
     seq_year = np.repeat(np.arange(12), 12).reshape(144, 1)
     seq_month = np.tile(np.arange(12), 12).reshape(144, 1)
-    seq_number = seq_month.reshape(seq_number.shape[0], 1)
+    seq_number = seq_number.reshape(seq_month.shape[0], 1)
     seq = np.concatenate((seq_year, seq_month, seq_number), axis=1)
     # normalization
     seq = (seq - seq.mean(axis=0)) / seq.std(axis=0)
@@ -73,7 +73,7 @@ if __name__ == '__main__':
     optim = torch.optim.Adam(net.parameters(), lr=0.02)
     loss_func = nn.MSELoss()
     net.train()
-    for epoch in range(2):
+    for epoch in range(500):
         out = net(train_x)
         optim.zero_grad()
         loss = loss_func(out, train_y)
