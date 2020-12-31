@@ -1,3 +1,7 @@
-.idea/*
 *.pyc
-__pycache__
+*.log
+logs/
+.idea/
+local_config.py
+*.rdb
+venv/*
