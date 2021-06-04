@@ -5,3 +5,9 @@ logs/
 local_config.py
 *.rdb
 venv/*
+*.pkl
+*.joblib
+*.svg
+*.json
+*.png
+*.csv

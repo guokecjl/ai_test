@@ -60,9 +60,9 @@ def create_dataset(seq, step):
 
 
 if __name__ == '__main__':
-    data_set = load_data()
+    data_set = load_data()  # (143, 3)
     train_size  = int(len(data_set) * 0.7)
-    x, y = create_dataset(data_set, 3)
+    x, y = create_dataset(data_set, 3) # (141,3,2), (141)
     train_x, test_x = x[:train_size], x[train_size:]
     train_y, test_y = y[:train_size], y[train_size:]
 

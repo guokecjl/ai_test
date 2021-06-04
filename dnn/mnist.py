@@ -39,7 +39,7 @@ class Net(nn.Module):
         x = x.reshape(-1, 784)
         x = F.relu(self.line1(x))
         x = F.dropout(x, 0.2)
-        x = F.relu(self.line2(x))
+        x = self.line2(x)
         return x
 
 
@@ -86,5 +86,5 @@ def use_save_model():
 
 
 if __name__ == '__main__':
-    # train_model(20)
-    use_save_model()
+    train_model(20, False)
+    # use_save_model()

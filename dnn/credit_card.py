@@ -75,6 +75,7 @@ x_test = torch.tensor(x_test)
 y_test = torch.tensor(y_test)
 train_loader = torch.utils.data.DataLoader(np.concatenate((x_train, y_train), 1), batch_size=64, drop_last=True, shuffle=True)
 
+
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()

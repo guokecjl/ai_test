@@ -32,7 +32,7 @@ class ConvNet(nn.Module):
         self.conv1 = nn.Conv2d(1, 32, 5)
         self.pool1 = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(32, 64, 3)
-        self.pool2 = nn.MaxPool2d(2,2)
+        self.pool2 = nn.MaxPool2d(2, 2)
         self.line1 = nn.Linear(64 * 5 * 5, 100)
         self.line2 = nn.Linear(100, 10)
 
@@ -45,7 +45,7 @@ class ConvNet(nn.Module):
         x = x.reshape(-1, 64 * 5 * 5)
         x = F.relu(self.line1(x))
         x = F.dropout(x, 0.2)
-        x = F.relu(self.line2(x))
+        x = self.line2(x)
         return x
 
 net = ConvNet()
