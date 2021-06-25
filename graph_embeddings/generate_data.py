@@ -60,7 +60,7 @@ class Word2Vec1(nn.Module):
 
     def forward(self, x):
         x = F.relu(self.line1(x))
-        x = F.dropout(x, 0.1)
+        x = F.dropout(x, 0.1, training=self.training)
         x = F.logsigmoid(self.line2(x))
         return x
 

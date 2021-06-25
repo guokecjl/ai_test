@@ -34,7 +34,7 @@ class Net(nn.Module):
     def forward(self, x):
         x = x.reshape(-1, 784)
         x = F.relu(self.line1(x))
-        # x = F.dropout(x, 0.2)
+        # x = F.dropout(x, 0.2, training=self.training)
         x = self.line2(x)
         return x
 

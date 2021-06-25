@@ -44,7 +44,7 @@ class ConvNet(nn.Module):
         x = self.pool2(x)
         x = x.reshape(-1, 64 * 5 * 5)
         x = F.relu(self.line1(x))
-        x = F.dropout(x, 0.2)
+        x = F.dropout(x, 0.2, training=self.training)
         x = self.line2(x)
         return x
 

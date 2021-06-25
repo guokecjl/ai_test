@@ -91,7 +91,7 @@ class RandomWalker:
             if len(cur_nbrs) > 0:
                 if len(walk) == 1:
                     walk.append(
-                        cur_nbrs[alias_sample(alias_nodes[cur][0], alias_nodes[cur][1])])
+                        cur_nbrs[self.alias_sample(alias_nodes[cur][0], alias_nodes[cur][1])])
                 else:
                     upper_bound, lower_bound, shatter = rejection_sample(
                         inv_p, inv_q, len(cur_nbrs))
@@ -102,7 +102,7 @@ class RandomWalker:
                         if (prob + shatter >= upper_bound):
                             next_node = prev
                             break
-                        next_node = cur_nbrs[alias_sample(
+                        next_node = cur_nbrs[self.alias_sample(
                             alias_nodes[cur][0], alias_nodes[cur][1])]
                         if (prob < lower_bound):
                             break
