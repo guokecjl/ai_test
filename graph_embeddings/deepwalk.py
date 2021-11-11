@@ -97,7 +97,7 @@ def plot_embeddings(embeddings):
     plt.show()
 
 
-model = DeepWalk(g, 10, 3644)
-model.train(window_size=5, iter=5)
+model = DeepWalk(g, 10, 3644*20)
+model.train(window_size=5, iter=20)
 embeddings = model.get_embeddings()
 plot_embeddings(embeddings)

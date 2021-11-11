@@ -34,9 +34,10 @@ import os
 import sys
 sys.path.append(os.path.abspath(
     os.path.dirname(os.path.abspath(__file__)) + os.path.sep + ".."))
-base_dir = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
+base_dir = os.path.abspath(
+    os.path.dirname(os.path.abspath(__file__)) + os.path.sep + "..")
 
-df = pd.read_csv(os.path.join(base_dir, 'BankChurners.csv'))
+df = pd.read_csv(os.path.join(base_dir, "data", 'BankChurners.csv'))
 columns = ["Customer_Age", 'Dependent_count', 'Months_on_book',
        'Total_Relationship_Count', 'Months_Inactive_12_mon',
        'Contacts_Count_12_mon', 'Credit_Limit', 'Total_Revolving_Bal',
@@ -103,4 +104,4 @@ def ML_Algorithms(model, alg_name, x_trainn, x_testt, y_trainn, y_testt):
 # ML_Algorithms(RandomForestClassifier, "Random Forest Classifier", X_train, X_val, y_train, y_val)
 # ML_Algorithms(DecisionTreeClassifier, "DecisionTreeClassifier", X_train, X_val, y_train, y_val)
 # ML_Algorithms(GradientBoostingClassifier, "GradientBoostingClassifier", X_train, X_test, y_train, y_test)
-ML_Algorithms(MLPClassifier, "LGBM Classifier", X_train, X_val, y_train, y_val)
+# ML_Algorithms(MLPClassifier, "LGBM Classifier", X_train, X_val, y_train, y_val)
